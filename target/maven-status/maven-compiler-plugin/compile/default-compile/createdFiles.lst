@@ -9,6 +9,7 @@ Repository\ImageRepository.class
 DTO\RoleDTO.class
 DTO\UserLogDTO.class
 DTO\ServiceDTO.class
+API\UserAPI.class
 DAO\ImageDAO.class
 Repository\SystemVariableRepository.class
 DAO\ServiceDAO.class
@@ -20,15 +21,17 @@ Factory\ConnectionFactory.class
 DTO\SystemVariableTypeDTO.class
 DAO\UserDAO.class
 Repository\UserRepository.class
-.netbeans_automatic_build
 Repository\ServiceHistoryRepository.class
+API\ServiceAPI.class
 Configuration\ApplicationConfig.class
 Repository\RoleRepository.class
 Repository\ServiceRepository.class
-API\User.class
+API\SystemVariableTypeAPI.class
 DAO\RoleDAO.class
+API\SystemVariableAPI.class
 Test\Password.class
 Repository\SystemVariableTypeRepository.class
+API\RoleAPI.class
 DTO\SystemVariableDTO.class
 DAO\DAO.class
 DAO\SystemVariableTypeDAO.class
