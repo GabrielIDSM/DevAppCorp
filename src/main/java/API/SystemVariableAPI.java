@@ -18,6 +18,7 @@ import javax.ws.rs.core.Response;
  *
  * @author Gabriel Inácio <gabrielinacio@id.uff.br>
  */
+@Path("/sysvar")
 public class SystemVariableAPI {
     private static final SystemVariableRepository SYSVAR_REPOSITORY = new SystemVariableRepository();
     
