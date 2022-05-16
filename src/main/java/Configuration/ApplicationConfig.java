@@ -1,6 +1,9 @@
 package Configuration;
 
 import API.RoleAPI;
+import API.ServiceAPI;
+import API.SystemVariableAPI;
+import API.SystemVariableTypeAPI;
 import API.UserAPI;
 import java.util.HashSet;
 import java.util.Set;
@@ -18,6 +21,9 @@ public class ApplicationConfig extends Application {
         Set<Class<?>> sets = new HashSet<>();
         sets.add(UserAPI.class);
         sets.add(RoleAPI.class);
+        sets.add(ServiceAPI.class);
+        sets.add(SystemVariableAPI.class);
+        sets.add(SystemVariableTypeAPI.class);
         return sets;
     }
 }
