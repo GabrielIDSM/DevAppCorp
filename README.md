@@ -519,75 +519,167 @@ DELETE https://devappcorp.herokuapp.com/api/image/{id}
 200 OK
 ```
 
-### Image (/api/image)
+### User Log (/api/userlog)
 
-Esses endpoints podem ser usados para listar, criar, editar e excluir o nome dos arquivos de imagem do sistema. Essa entidade possui os seguintes atributos:
+Esses endpoints podem ser usados para listar, criar, editar e excluir registros de acesso dos usuário do sistema. Essa entidade possui os seguintes atributos:
 
 | Atributos | Tipo | Modificadores |
 |---|---|---|
 |Id|Integer|Identificador|
-|FileName|String|Único|
+|User|User|Obrigatório|
+|Timestamp|Timestamp|Obrigatório|
 
 Os atributos devem ser usados nas requisições PUT e POST.
 
-#### GET /api/image
+#### GET /api/userlog
 
 ```
-GET https://devappcorp.herokuapp.com/api/image
+GET https://devappcorp.herokuapp.com/api/userlog
 ```
 ```javascript
 [
     {
         "id": 1,
-        "filename": "image.XPTO"
+        "user": {...},
+        "timestamp": 1655333753154
     },
     {
         "id": 2,
-        "filename": "image.XPTO.two"
+        "user": {...},
+        "timestamp": 1655333753154
     }
 ]
 ```
 
-#### GET /api/image/{id}
+#### GET /api/userlog/{id}
 
 ```
-GET https://devappcorp.herokuapp.com/api/image/{id}
+GET https://devappcorp.herokuapp.com/api/userlog/{id}
 ```
 ```javascript
 {
     "id": 1,
-    "filename": "image.XPTO"
+    "user": {...},
+    "timestamp": 1655333753154
 }
 ```
 
-#### POST /api/image
+#### POST /api/userlog
 
 ```
-POST https://devappcorp.herokuapp.com/api/image/
+POST https://devappcorp.herokuapp.com/api/userlog/
 ```
 ```javascript
 {
     "id": 1,
-    "filename": "image.XPTO"
+    "user": {...},
+    "timestamp": 1655333753154
 }
 ```
 
-#### PUT /api/image/{id}
+#### PUT /api/userlog/{id}
 
 ```
-PUT https://devappcorp.herokuapp.com/api/image/{id}
+PUT https://devappcorp.herokuapp.com/api/userlog/{id}
 ```
 ```javascript
 {
     "id": 1,
-    "filename": "image.XPTO"
+    "user": {...},
+    "timestamp": 1655333753154
 }
 ```
 
-#### DELETE /api/image/{id}
+#### DELETE /api/userlog/{id}
 
 ```
-DELETE https://devappcorp.herokuapp.com/api/image/{id}
+DELETE https://devappcorp.herokuapp.com/api/userlog/{id}
+```
+```
+200 OK
+```
+
+### Service History (/api/servicehistory)
+
+Esses endpoints podem ser usados para listar, criar, editar e excluir o número de reclamações dos serviços do sistema. Essa entidade possui os seguintes atributos:
+
+| Atributos | Tipo | Modificadores |
+|---|---|---|
+|Id|Integer|Identificador|
+|Service|Service|Obrigatório|
+|Complaints|Integer|Obrigatório|
+|collectionTimestamp|Timestamp|Obrigatório|
+
+Os atributos devem ser usados nas requisições PUT e POST.
+
+#### GET /api/servicehistory
+
+```
+GET https://devappcorp.herokuapp.com/api/servicehistory
+```
+```javascript
+[
+    {
+        "id": 1,
+        "service": {...},
+        "complaints": 10,
+        "collectionTimestamp": 1655333753154
+    },
+    {
+        "id": 2,
+        "service": {...},
+        "complaints": 15,
+        "collectionTimestamp": 1655333753154
+    }
+]
+```
+
+#### GET /api/servicehistory/{id}
+
+```
+GET https://devappcorp.herokuapp.com/api/servicehistory/{id}
+```
+```javascript
+{
+    "id": 1,
+    "service": {...},
+    "complaints": 10,
+    "collectionTimestamp": 1655333753154
+}
+```
+
+#### POST /api/servicehistory
+
+```
+POST https://devappcorp.herokuapp.com/api/servicehistory/
+```
+```javascript
+{
+    "id": 1,
+    "service": {...},
+    "complaints": 10,
+    "collectionTimestamp": 1655333753154
+}
+```
+
+#### PUT /api/servicehistory/{id}
+
+```
+PUT https://devappcorp.herokuapp.com/api/servicehistory/{id}
+```
+```javascript
+{
+    "id": 1,
+    "service": {...},
+    "complaints": 10,
+    "collectionTimestamp": 1655333753154
+}
+```
+
+#### DELETE /api/servicehistory/{id}
+
+```
+DELETE https://devappcorp.herokuapp.com/api/servicehistory/{id}
 ```
 ```
 200 OK
