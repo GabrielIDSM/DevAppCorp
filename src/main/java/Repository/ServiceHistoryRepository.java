@@ -3,7 +3,6 @@ package Repository;
 import DAO.ServiceHistoryDAO;
 import DTO.ServiceDTO;
 import DTO.ServiceHistoryDTO;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -43,6 +42,10 @@ public class ServiceHistoryRepository extends Repository<ServiceHistoryDTO> {
         return list;
     }
     
+    public ServiceHistoryDTO getServiceHistory(Integer id) {
+        return get(id);
+    }
+    
     public Boolean removeAllServiceHistoryByService(ServiceDTO object) {
         Boolean opStatus = true; 
         ServiceHistoryDAO objectDAO = new ServiceHistoryDAO();
@@ -58,7 +61,15 @@ public class ServiceHistoryRepository extends Repository<ServiceHistoryDTO> {
         return add(object);
     }
 
+    public Boolean updateServiceHistory(ServiceHistoryDTO object) {
+        return update(object);
+    }
+
     public Boolean removeServiceHistory(ServiceHistoryDTO object) {
         return remove(object);
+    }
+
+    public Boolean removeServiceHistory(Integer id) {
+        return remove(get(id));
     }
 }

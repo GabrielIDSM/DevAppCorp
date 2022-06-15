@@ -2,6 +2,7 @@ package Repository;
 
 import DAO.ImageDAO;
 import DTO.ImageDTO;
+import java.util.List;
 
 /**
  *
@@ -33,6 +34,12 @@ public class ImageRepository extends Repository<ImageDTO> {
         return objectDAO.delete(object.getId());
     }
     
+    public List<ImageDTO> all() {
+        ImageDAO objectDAO = new ImageDAO();
+        List<ImageDTO> list = objectDAO.all();
+        return list;
+    }
+    
     protected Boolean removeImageById(Integer id) {
         ImageDAO objectDAO = new ImageDAO();
         return objectDAO.delete(id);
@@ -49,5 +56,13 @@ public class ImageRepository extends Repository<ImageDTO> {
     
     public Boolean removeImage(ImageDTO object) {
         return removeImageById(object.getId());
+    }
+    
+    public Boolean removeImage(Integer id) {
+        return removeImageById(id);
+    }
+    
+    public ImageDTO getImage(Integer id) {
+        return get(id);
     }
 }

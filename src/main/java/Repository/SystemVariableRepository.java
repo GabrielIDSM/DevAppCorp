@@ -44,6 +44,15 @@ public class SystemVariableRepository extends Repository<SystemVariableDTO> {
         return get(Id);
     }
     
+    public SystemVariableDTO getSystemVariable(String Name) {
+        List<SystemVariableDTO> list = all();
+        if (list != null) for (SystemVariableDTO sv : list) {
+            if (sv.getName().contentEquals(Name))
+                return sv;
+        }
+        return null;
+    }
+    
     public Boolean addSystemVariable(SystemVariableDTO object) {
         return add(object);
     }

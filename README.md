@@ -445,6 +445,154 @@ DELETE https://devappcorp.herokuapp.com/api/sysvartype/{id}
 200 OK
 ```
 
+### Image (/api/image)
+
+Esses endpoints podem ser usados para listar, criar, editar e excluir o nome dos arquivos de imagem do sistema. Essa entidade possui os seguintes atributos:
+
+| Atributos | Tipo | Modificadores |
+|---|---|---|
+|Id|Integer|Identificador|
+|FileName|String|Único|
+
+Os atributos devem ser usados nas requisições PUT e POST.
+
+#### GET /api/image
+
+```
+GET https://devappcorp.herokuapp.com/api/image
+```
+```javascript
+[
+    {
+        "id": 1,
+        "filename": "image.XPTO"
+    },
+    {
+        "id": 2,
+        "filename": "image.XPTO.two"
+    }
+]
+```
+
+#### GET /api/image/{id}
+
+```
+GET https://devappcorp.herokuapp.com/api/image/{id}
+```
+```javascript
+{
+    "id": 1,
+    "filename": "image.XPTO"
+}
+```
+
+#### POST /api/image
+
+```
+POST https://devappcorp.herokuapp.com/api/image/
+```
+```javascript
+{
+    "id": 1,
+    "filename": "image.XPTO"
+}
+```
+
+#### PUT /api/image/{id}
+
+```
+PUT https://devappcorp.herokuapp.com/api/image/{id}
+```
+```javascript
+{
+    "id": 1,
+    "filename": "image.XPTO"
+}
+```
+
+#### DELETE /api/image/{id}
+
+```
+DELETE https://devappcorp.herokuapp.com/api/image/{id}
+```
+```
+200 OK
+```
+
+### Image (/api/image)
+
+Esses endpoints podem ser usados para listar, criar, editar e excluir o nome dos arquivos de imagem do sistema. Essa entidade possui os seguintes atributos:
+
+| Atributos | Tipo | Modificadores |
+|---|---|---|
+|Id|Integer|Identificador|
+|FileName|String|Único|
+
+Os atributos devem ser usados nas requisições PUT e POST.
+
+#### GET /api/image
+
+```
+GET https://devappcorp.herokuapp.com/api/image
+```
+```javascript
+[
+    {
+        "id": 1,
+        "filename": "image.XPTO"
+    },
+    {
+        "id": 2,
+        "filename": "image.XPTO.two"
+    }
+]
+```
+
+#### GET /api/image/{id}
+
+```
+GET https://devappcorp.herokuapp.com/api/image/{id}
+```
+```javascript
+{
+    "id": 1,
+    "filename": "image.XPTO"
+}
+```
+
+#### POST /api/image
+
+```
+POST https://devappcorp.herokuapp.com/api/image/
+```
+```javascript
+{
+    "id": 1,
+    "filename": "image.XPTO"
+}
+```
+
+#### PUT /api/image/{id}
+
+```
+PUT https://devappcorp.herokuapp.com/api/image/{id}
+```
+```javascript
+{
+    "id": 1,
+    "filename": "image.XPTO"
+}
+```
+
+#### DELETE /api/image/{id}
+
+```
+DELETE https://devappcorp.herokuapp.com/api/image/{id}
+```
+```
+200 OK
+```
+
 ## Participantes
 
 * Gabriel Inácio dos Santos Moreira (gabrielinacio@id.uff.br)

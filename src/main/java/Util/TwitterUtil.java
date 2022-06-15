@@ -23,9 +23,7 @@ import org.json.simple.parser.ParseException;
  * @author Gabriel Inácio <gabrielinacio@id.uff.br>
  */
 public class TwitterUtil {
-    private static final String BEARER_TOKEN = "AAAAAAAAAAAAAAAAAAAAAMNlRAEAAAAAGvhVUO4aPIf%2F5CeWXFKvmaLUIQQ%3DpgumI8KAugMd8FwM2MSxl3wPWdS26bs7JVvAQr0wfQuDeHmWWC";
-    
-    public Integer getComplaintCount(String query) throws URISyntaxException, IOException, ParseException {
+    public Integer getComplaintCount(String query, String url, String maxResult, String token) throws URISyntaxException, IOException, ParseException {
         Integer complaintCount = 0;
         
         DateUtil dateUtil = new DateUtil();
@@ -36,17 +34,17 @@ public class TwitterUtil {
                         .setCookieSpec(CookieSpecs.STANDARD).build())
                 .build();
 
-        URIBuilder uriBuilder = new URIBuilder("https://api.twitter.com/2/tweets/search/recent");
+        URIBuilder uriBuilder = new URIBuilder(url);
         ArrayList<NameValuePair> queryParameters;
         queryParameters = new ArrayList<>();
         queryParameters.add(new BasicNameValuePair("query", query));
         queryParameters.add(new BasicNameValuePair("tweet.fields", "author_id"));
-        queryParameters.add(new BasicNameValuePair("max_results", "100"));
+        queryParameters.add(new BasicNameValuePair("max_results", maxResult));
         queryParameters.add(new BasicNameValuePair("start_time", dateUtil.getISODate()));
         uriBuilder.addParameters(queryParameters);
 
         HttpGet httpGet = new HttpGet(uriBuilder.build());
-        httpGet.setHeader("Authorization", String.format("Bearer %s", BEARER_TOKEN));
+        httpGet.setHeader("Authorization", String.format("Bearer %s", token));
         httpGet.setHeader("Content-Type", "application/json");
 
         HttpResponse response = httpClient.execute(httpGet);
