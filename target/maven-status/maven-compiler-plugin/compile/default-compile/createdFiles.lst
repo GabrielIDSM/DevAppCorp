@@ -1,5 +1,4 @@
 DAO\ServiceHistoryDAO.class
-Util\TwitterUtil.class
 DAO\SystemVariableDAO.class
 DTO\ServiceHistoryDTO.class
 DTO\UserDTO.class
@@ -9,6 +8,7 @@ Repository\ImageRepository.class
 DTO\RoleDTO.class
 DTO\UserLogDTO.class
 DTO\ServiceDTO.class
+API\ServiceHistoryAPI.class
 API\UserAPI.class
 DAO\ImageDAO.class
 Repository\SystemVariableRepository.class
@@ -25,7 +25,9 @@ Repository\ServiceHistoryRepository.class
 API\ServiceAPI.class
 Configuration\ApplicationConfig.class
 Repository\RoleRepository.class
+Util\SystemVariableUtil.class
 Repository\ServiceRepository.class
+Service\Startup.class
 API\SystemVariableTypeAPI.class
 DAO\RoleDAO.class
 API\SystemVariableAPI.class
@@ -35,4 +37,6 @@ API\RoleAPI.class
 DTO\SystemVariableDTO.class
 DAO\DAO.class
 DAO\SystemVariableTypeDAO.class
+API\ImageAPI.class
+API\UserLogAPI.class
 Util\DateUtil.class
