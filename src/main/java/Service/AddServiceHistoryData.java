@@ -20,6 +20,7 @@ import org.json.simple.parser.ParseException;
 public class AddServiceHistoryData implements Runnable {
     @Override
     public void run() {
+        System.out.println("AddServiceHistoryData running");
         SystemVariableUtil systemVariableUtil = new SystemVariableUtil();
         TwitterUtil twitterUtil = new TwitterUtil();
         ServiceRepository serviceRepository = new ServiceRepository();
@@ -31,6 +32,7 @@ public class AddServiceHistoryData implements Runnable {
                 .toType(systemVariableRepository.getSystemVariable("MAX_RESULT"));
         String token = (String) systemVariableUtil
                 .toType(systemVariableRepository.getSystemVariable("TOKEN"));
+        System.out.printf("TOKEN: %s\nMAX_RESULT: %s\nURL: %s\n", token, maxResult, url);
         List<ServiceDTO> serviceList = serviceRepository.all();
         if (serviceList != null) for (ServiceDTO serviceDTO : serviceList) {
             ServiceHistoryDTO serviceHistoryDTO = new ServiceHistoryDTO();

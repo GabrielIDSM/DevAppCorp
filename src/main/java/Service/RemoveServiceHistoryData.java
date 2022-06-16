@@ -15,6 +15,7 @@ import java.util.List;
 public class RemoveServiceHistoryData implements Runnable {
     @Override
     public void run() {
+        System.out.println("RemoveServiceHistoryData running");
         SystemVariableUtil systemVariableUtil = new SystemVariableUtil();
         SystemVariableRepository systemVariableRepository = new SystemVariableRepository();
         Integer months = (Integer) systemVariableUtil
