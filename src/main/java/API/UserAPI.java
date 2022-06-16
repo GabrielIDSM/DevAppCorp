@@ -47,6 +47,14 @@ public class UserAPI {
         } 
     }
     
+    @POST
+    @Path("/login")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public UserDTO login(UserDTO o) {
+        return USER_REPOSITORY.login(o.getUsername(), o.getPassword());
+    }
+    
     @PUT
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
