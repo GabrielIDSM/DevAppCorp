@@ -34,6 +34,13 @@ public class ServiceHistoryAPI {
     public ServiceHistoryDTO getById(@PathParam("id") int id) {
         return SERVICE_HISTORY_REPOSITORY.getServiceHistory(id);
     }
+
+    @GET
+    @Path("/last")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<ServiceHistoryDTO> getLast() {
+        return SERVICE_HISTORY_REPOSITORY.last();
+    }
     
     @POST
     @Produces(MediaType.APPLICATION_JSON)

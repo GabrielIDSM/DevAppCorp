@@ -3,6 +3,7 @@ package Repository;
 import DAO.ServiceHistoryDAO;
 import DTO.ServiceDTO;
 import DTO.ServiceHistoryDTO;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -40,6 +41,28 @@ public class ServiceHistoryRepository extends Repository<ServiceHistoryDTO> {
         ServiceHistoryDAO objectDAO = new ServiceHistoryDAO();
         List<ServiceHistoryDTO> list = objectDAO.all();
         return list;
+    }
+    
+    public List<ServiceHistoryDTO> last() {
+        ServiceHistoryDAO objectDAO = new ServiceHistoryDAO();
+        ServiceRepository serviceRepository = new ServiceRepository();
+        List<ServiceDTO> services = serviceRepository.all();
+        List<ServiceHistoryDTO> list = objectDAO.all();
+        List<ServiceHistoryDTO> last = new ArrayList<>();
+        for (ServiceDTO service : services) {
+            ServiceHistoryDTO lastHistory = null;
+            for (ServiceHistoryDTO history : list) {
+                if (history.getService().equals(service))
+                    if (lastHistory == null)
+                        lastHistory = history;
+                    else
+                        if (history.getCollectionTimestamp()
+                                .before(lastHistory.getCollectionTimestamp()))
+                            lastHistory = history;
+            }
+            last.add(lastHistory);
+        }
+        return last;
     }
     
     public ServiceHistoryDTO getServiceHistory(Integer id) {
