@@ -57,7 +57,7 @@ public class ServiceHistoryRepository extends Repository<ServiceHistoryDTO> {
                         lastHistory = history;
                     else
                         if (history.getCollectionTimestamp()
-                                .before(lastHistory.getCollectionTimestamp()))
+                                .after(lastHistory.getCollectionTimestamp()))
                             lastHistory = history;
             }
             last.add(lastHistory);
