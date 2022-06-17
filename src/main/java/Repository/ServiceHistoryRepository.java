@@ -52,7 +52,7 @@ public class ServiceHistoryRepository extends Repository<ServiceHistoryDTO> {
         for (ServiceDTO service : services) {
             ServiceHistoryDTO lastHistory = null;
             for (ServiceHistoryDTO history : list) {
-                if (history.getService().equals(service))
+                if (history.getService().getName().equals(service.getName()))
                     if (lastHistory == null)
                         lastHistory = history;
                     else
